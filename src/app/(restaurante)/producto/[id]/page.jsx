@@ -4,8 +4,12 @@ import { useParams } from "next/navigation";
 import { useState, useEffect } from "react";
 import SlidesDesktop from "../ui/SlidesDesktop";
 import { FormatMoney } from "@/utils/FormatMoney";
+import { useSelector } from "react-redux";
+import AddToCart from "../ui/AddToCart";
 
 const ProductId = () => {
+  const cart = useSelector((state) => state.cart);
+  console.log(cart);
   const [productId, setProductId] = useState([]);
   const [imagenes, setImagenes] = useState(null);
   const params = useParams();
@@ -56,6 +60,9 @@ const ProductId = () => {
                 {FormatMoney(productId.precio)}
               </span>
             </p>
+          </div>
+          <div className="block mt-5">
+            <AddToCart producto={productId} key={productId.id} />
           </div>
           <div className="block mt-5">
             <p className="text-xl font-semibold text-gray-700">

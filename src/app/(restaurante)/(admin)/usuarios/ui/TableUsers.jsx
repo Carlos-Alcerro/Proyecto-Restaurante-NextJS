@@ -51,7 +51,7 @@ const TableUsers = ({ setUser }) => {
               Rol
             </th>
             <th scope="col" className="px-6 py-3">
-              Activo
+              Estado
             </th>
             <th scope="col" className="px-6 py-3">
               Acciones
